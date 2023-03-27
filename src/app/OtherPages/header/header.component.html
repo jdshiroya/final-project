@@ -1,0 +1,38 @@
+<nav class="navbar navbar-expand navbar-dark bg-dark px-2 sticky-top">
+    <div class="side-nav-button p-2 me-3 text-light" (click)="sidenavToggle()">
+        <i class="bi bi-list"></i>
+    </div>
+
+    <a class="navbar-brand px-4" href="#">
+        <img src="../../../assets/img/new logo/new logo.png" class="logo" alt="">
+    </a>
+
+    <div class="navbar-collapse">
+        
+    </div>
+
+    <div class="d-flex me-5 ">
+        <!-- <input type="search" class="form-control me-2 search-bar" placeholder="search"> -->
+        <button class="user" (click)="profile()"><span>Profile</span>
+        </button>
+        <button class="user" routerLink="Login" style="margin-left: 15px;" *ngIf="!ss.isLogin()"><span>Login</span></button>
+        <button class="user" style="margin-left: 15px;" (click)="logout()" *ngIf="ss.isLogin()"><span>LogOut</span></button>
+    </div>
+
+    <!-- <div class="btn btn-primary">
+            <p routerLink="Login" class="dropdown-item" *ngIf="!ss.isLogin()">Login</p>
+            <p class="dropdown-item" (click)="profile()">Profile</p>
+            <p class="" (click)="logout()" *ngIf="ss.isLogin()">LogOut</p>
+    </div> -->
+    <!-- <div class="profile-logo dropstart">
+        <button class="btn btn-outline-light dropdown-toggle" data-bs-toggle="dropdown">
+            <i class="bi bi-person-circle"></i>
+        </button>
+
+        <ul class="dropdown-menu dropdown-menu-dark">
+            <li><a routerLink="Login" class="dropdown-item" *ngIf="!ss.isLogin()">Login / Registration</a></li>
+            <li><a class="dropdown-item" (click)="profile()">Profile</a></li>
+            <li><a class="dropdown-item" (click)="logout()" *ngIf="ss.isLogin()">LogOut</a></li>
+        </ul>
+    </div> -->
+</nav>

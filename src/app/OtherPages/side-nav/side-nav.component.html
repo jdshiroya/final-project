@@ -1,0 +1,21 @@
+<div class="side-nav-content" *ngIf="!ss.Role()">
+    <ul class="nav-list" [ngClass]="{'nav-list-open': sideNavStatus}">
+        <li class="nav-list-item border-white" *ngFor="let item of list" routerLink="{{item.link}}">
+            <i class="{{item.icon}}"></i>
+            <span class="border-white">
+                <a>{{item.name}}</a>
+            </span>
+        </li>
+    </ul>
+</div>
+
+<div class="side-nav-content" *ngIf="ss.Role()">
+    <ul class="nav-list" [ngClass]="{'nav-list-open': sideNavStatus}">
+        <li class="nav-list-item admin border-white" *ngFor="let item of admin" routerLink="{{item.link}}">
+            <i class="{{item.icon}}"></i>
+            <span class="border-white">
+                <a>{{item.name}}</a>
+            </span>
+        </li>
+    </ul>
+</div>

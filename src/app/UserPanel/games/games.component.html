@@ -1,0 +1,38 @@
+<img src="../../../assets/img/try/line_maze.svg" class="img">
+<div class="container-fluid">
+dd
+    <div class="row">
+    <!--<div class="col-lg-4" *ngFor="let game of Games">
+            <div class="productbox mt-2 mb-3">
+                <img src="{{game.gameImage}}"/>
+                <h1>{{game.gameName}}</h1>
+                <p>{{game.gameDetails}}</p>
+                 <div class="line">
+                <button>
+                         P L A Y
+                    <div id="clip">
+                        <div id="leftTop" class="corner"></div>
+                        <div id="rightBottom" class="corner"></div>
+                        <div id="rightTop" class="corner"></div>
+                        <div id="leftBottom" class="corner"></div>
+                    </div>
+                    <span id="rightArrow" class="arrow"></span>
+                    <span id="leftArrow" class="arrow"></span>
+                </button>
+            </div>
+            </div>
+        </div>    
+    </div>-->
+    <div class="card col-lg-4" *ngFor="let game of Games">
+        <div class="img-container">
+          <img src="{{game.gameImage}}" alt=""/>
+        </div>
+        <div class="card-details">
+          <h2>{{game.gameName}}</h2>
+          <p class="f-1">
+            {{game.gameDetails}}      
+        </p>
+        </div>
+      </div>
+    </div>
+</div>

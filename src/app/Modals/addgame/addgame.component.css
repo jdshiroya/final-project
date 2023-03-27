@@ -1,0 +1,254 @@
+.image-show{
+    height: 200px;
+    width: 350px;
+  }
+  
+  .grd{
+    box-sizing: border-box;
+    padding: 23px;
+    border: 1px solid rgb(255, 0, 0);
+    border-radius: 15px;
+    /* margin-top: -15px; */
+  }
+  
+  .rg-grd{
+    border: 1px solid black;
+    border-radius: 15px;
+    padding: 5px;
+  }
+  
+  .lf-grd{
+    padding: 5px;
+    margin-left: 5px;
+    border: 1px solid black;
+    border-radius: 15px
+  }
+
+  .rt-bx{
+    padding: 0 10px 5px 30px;
+  }
+  
+  .input{
+    margin-top: 10px;
+    width: 350px;
+  }
+  
+  .inp-2{
+    padding-top: 15px;
+  }
+  
+  .btn-lg{
+    margin-left: 25%;
+    margin-top: 20px;
+    width: 200px;
+  }
+
+  .header{
+    /* background-color: rgba(86, 96, 236, 0.822); */
+    text-align: center;
+    font-family: cursive;
+    font-size: 2rem;
+  }
+
+mat-dialog-content{
+  position: relative;
+  height: calc(100% + 16px);
+  top: -16px;
+  margin-top: 0;
+}
+
+mat-card{
+  margin-top: 10px;
+  border: 2px solid black;
+  /* background-color: #303d3c; */
+}
+
+.boxes{
+  box-shadow: inset 0px 0px 53px -7px rgba(0,0,0,0.75);
+  box-shadow: 0px 0px 23px -7px rgba(0,0,0,0.75);
+  /* background-color: #303d3c7c; */
+}
+
+.col-sm{
+  border: 2px dashed black;
+  border-radius: 5px;
+  margin: 2px;
+}
+
+.time{
+  margin-left: 10px;
+  margin-top: 5px;
+}
+
+.preview_img{
+  width: 350px;
+  height: 240px;
+  background: #303d3c;
+  border-radius: 10px;
+  -webkit-border-radius: 10px;
+  -moz-border-radius: 10px;
+  -ms-border-radius: 10px;
+  -o-border-radius: 10px;
+  padding: 20px;
+  margin: -5px 0 0 12.5%;
+}
+.preview_img .main_img{
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  box-shadow: inset 0 0 10px 0 #222222;
+  background: #303d3c;
+  border-radius: 10px;
+  -webkit-border-radius: 10px;
+  -moz-border-radius: 10px;
+  -ms-border-radius: 10px;
+  -o-border-radius: 10px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.preview_img img{
+  width: 100%;
+  height: 100%;
+  display: block;
+}
+.imgHidden{
+  display: none;
+}
+.imgUploadCss{
+  display: block;
+  width: 280px;
+  background: #303d3c;
+  font-size: 16px;
+  font-weight: 400;
+  color: #ffffff;
+  font-family: 'Inter', sans-serif;
+  padding: 20px 20px;
+  margin-top: 16px;
+  border-radius: 6px;
+  -webkit-border-radius: 6px;
+  -moz-border-radius: 6px;
+  -ms-border-radius: 6px;
+  -o-border-radius: 6px;
+  position: relative;
+  overflow: hidden;
+  cursor: pointer;
+  transition: .2s linear;
+}
+
+.imgUploadCss:hover{
+  background: #ffffff;
+  color: #303d3c;
+  border: 1px solid #303d3c;
+}
+img[alt="Not Image Selected"]{
+ color: #c74444;
+}
+
+/* delete button */
+
+.btn1 {
+  cursor: pointer;
+  width: 50px;
+  height: 50px;
+  border: none;
+  position: relative;
+  border-radius: 10px;
+  -webkit-box-shadow: 1px 1px 5px .2px #00000035;
+  box-shadow: 1px 1px 5px .2px #00000035;
+  -webkit-transition: .2s linear;
+  transition: .2s linear;
+  transition-delay: .2s;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  justify-content: space-between;
+  margin-top: 20px;
+  background: #303d3c;
+}
+
+.btn1:hover {
+  width: 150px;
+  transition-delay: .2s;
+}
+
+.btn1:hover > .paragraph {
+  visibility: visible;
+  opacity: 1;
+  -webkit-transition-delay: .4s;
+  transition-delay: .4s;
+  margin-top: 12px;
+}
+
+.btn1:hover > .icon-wrapper .icon {
+  transform: scale(1.1);
+}
+
+.bnt1:hover > .icon-wrapper .icon path {
+  stroke: black;
+}
+
+.paragraph {
+  color: black;
+  visibility: hidden;
+  opacity: 0;
+  font-size: 18px;
+  margin-right: 20px;
+  padding-left: 20px;
+  -webkit-transition: .2s linear;
+  transition: .2s linear;
+  font-weight: bold;
+  text-transform: uppercase;
+}
+
+.icon-wrapper {
+  width: 50px;
+  height: 50px;
+  position: absolute;
+  top: 0;
+  right: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.icon {
+  transform: scale(.9);
+  transition: .2s linear;
+}
+
+.icon path {
+  stroke: #000;
+  stroke-width: 2px;
+  -webkit-transition: .2s linear;
+  transition: .2s linear;
+}
+
+/* error  */
+.error-message{
+  position: absolute;
+  color: red;
+  margin-top: -20px;
+}
+
+.slt{
+  left: 230px;
+}
+
+.img-err{
+  position: absolute;
+  left: 58%;
+  margin-bottom: 5px;
+}
+
+.btns{
+  margin-top: 5px;
+}
+/* mat-form-field{
+  margin-bottom: 4px;
+} */

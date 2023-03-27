@@ -1,0 +1,21 @@
+.image-show{
+    max-width: 70%;
+    max-height: 60%;
+}
+
+.navbar{
+   position: fixed;
+   margin-top: 4rem;
+   border: 0.5px solid white;
+   width: 100%;
+   border-top-right-radius: 5px;
+   border-top-left-radius: 5px;
+}
+.sbox{
+    position: relative;
+    right: 15px;
+}
+
+.bg{
+    background-color: rgb(49, 46, 241);
+}

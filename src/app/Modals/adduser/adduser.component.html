@@ -1,0 +1,179 @@
+<div mat-dialog-title class="header" color="accent" *ngIf="!update">Registration</div>
+<div mat-dialog-title class="header" color="accent" *ngIf="update">Update Your Profile</div>
+
+<mat-stepper linear #stepper color="accent">
+  <form>
+    <mat-step [stepControl]="firstFormGroup">
+      <form [formGroup]="firstFormGroup">
+        <ng-template matStepLabel>Fill out your name</ng-template>
+          <mat-grid-list cols="1" rowHeight="350px">
+              <mat-grid-tile>
+                  <div class="example-container">
+                  <mat-card>
+                    <mat-form-field appearance="fill" class="width-50" color="accent">
+                      <mat-label>First Name</mat-label>
+                      <input matInput placeholder="First name" formControlName="userFname" required>
+                    </mat-form-field>
+                    
+                    
+                    <mat-form-field appearance="fill" class="width-50 ml-2" color="accent">
+                      <mat-label>Last Name</mat-label>
+                      <input matInput placeholder="First name" formControlName="userLname" required>
+                    </mat-form-field>
+                    <br>
+                    <div class="container">
+                      <div class="row">
+                        <div class="col">
+                          <mat-card class="gender gdr" fxLayoutAlign="center center"><mat-label class="lable">Gender</mat-label></mat-card>
+                        </div>
+                        <div class="col-6 option">
+                          <mat-radio-group aria-label="Select an option" formControlName="gender">
+                            <mat-radio-button value="male">Male</mat-radio-button>
+                            <mat-radio-button class="example-radio-button" value="female">Female</mat-radio-button>
+                          </mat-radio-group>
+                        </div>
+                        <div class="col">
+                        </div>
+                      </div>
+                    </div>
+                    
+                    
+                    <br><br>
+          <label id="example-radio-group-label">Date of birth: </label>
+          <br><br>
+          <mat-form-field appearance="fill" color="accent">
+            <mat-label>Choose a date</mat-label>
+            <input matInput [matDatepicker]="picker" formControlName="dob">
+            <mat-hint>MM/DD/YYYY</mat-hint>
+            <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+            <mat-datepicker #picker></mat-datepicker>
+          </mat-form-field>
+                    <br>
+                  </mat-card>
+                  </div>
+              </mat-grid-tile>
+          </mat-grid-list>
+        <div class="buttons">
+          <button class="btn" mat-raised-button matStepperNext color="accent">Next <i class="bi bi-arrow-bar-right"></i></button>
+        </div>
+      </form>
+    </mat-step>
+    <mat-step [stepControl]="secondFormGroup">
+      <form [formGroup]="secondFormGroup">
+        <ng-template matStepLabel>Fill out your information</ng-template>
+        <mat-grid-list cols="1" rowHeight="350px">
+            <mat-grid-tile>
+                <div class="example-container">
+                  <mat-card class="card2">
+                    <div class="row">
+                      <div class="col">
+                        <mat-form-field appearance="fill" class="mobile" style="width: 250px;">
+                            <mat-label>Mobile Number</mat-label>
+                            <input matInput #input type="text" placeholder="Ex. 7896541230" formControlName="mobileNumber" required>
+                        </mat-form-field>
+                      </div>
+                    </div>
+                    <div class="row">
+                      <div class="col">
+                          <div class="row">
+                            <mat-form-field appearance="fill" class="mail" style="width: 275px;">
+                              <mat-label>E-Mail Address</mat-label>
+                              <input matInput #input type="email" placeholder="Ex. xyz@gmail.com" formControlName="email" required ngModel email>
+                            </mat-form-field>
+                          </div>
+                      </div>
+                    </div>
+                    <div class="row">
+                      <div class="col">
+                        <mat-form-field appearance="fill" style="width: 250px;">
+                          <mat-label>Enter your password</mat-label>
+                          <input matInput [type]="hide ? 'password' : 'text'" formControlName="password">
+                          <button mat-icon-button matSuffix (click)="hide = !hide" [attr.aria-label]="'Hide password'" [attr.aria-pressed]="hide">
+                            <mat-icon>{{hide ? 'visibility_off' : 'visibility'}}</mat-icon>
+                          </button>
+                        </mat-form-field>
+                      </div>
+                    </div>
+                    <div class="row">
+                      <div class="col">
+                        <mat-form-field appearance="fill" style="width: 250px;">
+                          <mat-label>Comfirm password</mat-label>
+                          <input matInput [type]="hide ? 'password' : 'text'" formControlName="cmpas">
+                          <button mat-icon-button matSuffix (click)="hide = !hide" [attr.aria-label]="'Hide password'" [attr.aria-pressed]="hide">
+                            <mat-icon>{{hide ? 'visibility_off' : 'visibility'}}</mat-icon>
+                          </button>
+                        </mat-form-field>
+                      </div>
+                    </div>
+                      
+                  </mat-card>
+                </div>
+            </mat-grid-tile>
+        </mat-grid-list>
+        <div class="buttons">
+          <button class="btn" mat-raised-button color="accent" style="margin-right: 5px;" matStepperPrevious><i class="bi bi-arrow-bar-left"></i>Back</button>
+          <button class="btn" mat-raised-button color="accent" matStepperNext>Next<i class="bi bi-arrow-bar-right"></i></button>
+        </div>
+      </form>
+    </mat-step>
+    <mat-step [stepControl]="thirdFormGroup">
+      <form [formGroup]="thirdFormGroup">
+        <ng-template matStepLabel>Username</ng-template>
+        <mat-grid-list cols="1" rowHeight="350px">
+          <mat-grid-tile >
+                  <div class="example-container">
+                    <mat-card class="card2">
+                      <div class="row">
+                        <div class="col">
+                          <mat-form-field appearance="fill" class="mobile" style="width: 250px;">
+                            <mat-label>Username</mat-label>
+                            <input matInput #input type="text" placeholder="Username" formControlName="userName" required>
+                        </mat-form-field>
+                        </div>
+                      </div>
+                      <div class="row">
+                        <div class="col">
+                            
+                        </div>
+                      </div>
+                      <div class="row">
+                        <div class="col row1">
+                          <div class="profile-pic-wrapper">
+                            <div class="pic-holder">
+                              <img id="profilePic" class="pic" src="{{imageSrc}}">
+                              <Input class="uploadProfileInput" type="file" name="profile_pic" id="newProfilePhoto" formControlName="image" accept="image/*" style="opacity: 0;" (change)="handleInputChange($event)"/>
+                              <input type="hidden" formControlName="image" value="{{imageSrc}}">
+                              <label for="newProfilePhoto" class="upload-file-block">
+                                <div class="text-center">
+                                  <div class="mb-2">
+                                    <i class="fa fa-camera fa-2x"></i>
+                                  </div>
+                                  <div class="text-uppercase">
+                                    Upload <br /> Profile Photo
+                                  </div>
+                                </div>
+                              </label>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="row">
+                        <div class="col">
+                          
+                        </div>
+                      </div>
+                        
+                    </mat-card>
+                  </div>
+          </mat-grid-tile>
+        </mat-grid-list>
+        <div class="buttons">
+          <button class="btn" mat-raised-button matStepperPrevious color="accent" style="margin-right: 5px;" ><i class="bi bi-arrow-bar-left"></i> Back</button>
+          <button class="btn" mat-raised-button (click)="stepper.reset()" color="accent">Reset <i class="bi bi-x-circle"></i></button>
+          <button class="btn" mat-raised-button (click)="submit()" color="accent" *ngIf="!update">Register <i class="bi bi-check-circle"></i></button>
+          <button class="btn" mat-raised-button (click)="updateuser()" color="accent" *ngIf="update">update <i class="bi bi-check-circle"></i></button>
+        </div>
+      </form>
+    </mat-step>
+  </form>
+</mat-stepper>

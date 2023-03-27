@@ -1,0 +1,232 @@
+<h2 mat-dialog-title class="header" color="warn" *ngIf="addgame">Add Game Details</h2>
+
+<mat-dialog-content class="mat-typography mt-0" *ngIf="addgame" data-bs-keyboard="false">
+      <mat-card class="card">
+        <div class="container">
+          <div class="row" [formGroup]="gameForm">
+            <!-- <form [formGroup]="gameForm"> -->
+            <div class="col-sm rt-bx boxes">
+              
+              <!-- game name -->
+              <mat-form-field appearance="fill" class="input" color="accent">
+                <mat-label>Game Name</mat-label>
+                <input matInput placeholder="Enter Game Name" formControlName="gameName">
+              </mat-form-field>
+              <div *ngIf="gameForm.get('gameName').errors && gameForm.get('gameName').touched" class="error-message">
+                *Name is required
+              </div>
+            <!-- game details -->
+                <mat-form-field appearance="fill" class="input" color="accent">
+                    <mat-label>Textarea</mat-label>
+                    <textarea matInput class="input" placeholder="Enter Game Name" formControlName="gameDetails"></textarea>
+                  </mat-form-field>
+                  <div *ngIf="gameForm.get('gameDetails').errors && gameForm.get('gameDetails').touched" class="error-message">
+                    *Details is required
+                  </div>
+            <!-- game price -->
+            <div >
+
+              <mat-form-field appearance="fill" style="width: 170px;" color="accent">
+                <mat-label>Game Price</mat-label>
+                <input matInput type="number" placeholder="Game Price" formControlName="gamePrice">
+                <button mat-icon-button matSuffix>
+                  <mat-icon></mat-icon>
+                </button>
+              </mat-form-field>
+              <div *ngIf="gameForm.get('gamePrice').errors && gameForm.get('gamePrice').touched" class="error-message">
+                *Price is required
+              </div>
+
+              <mat-form-field appearance="fill" class="time" style="width: 170px;" color="accent">
+                <mat-label>Available Slots</mat-label>
+                <input matInput type="number" placeholder="Slots" formControlName="slots">
+                <button mat-icon-button matSuffix>
+                  <mat-icon></mat-icon>
+                </button>
+              </mat-form-field>
+              <div *ngIf="gameForm.get('slots').errors && gameForm.get('slots').touched" class="error-message slt">
+                *Slots is required
+              </div>
+              
+              <mat-form-field appearance="fill"  color="accent">
+                <mat-label>Timing</mat-label>
+                <mat-select formControlName="time">
+                  <mat-option value="10">10 min</mat-option>
+                  <mat-option value="20">20 min</mat-option>
+                  <mat-option value="30">30 min</mat-option>
+                </mat-select>
+              </mat-form-field>
+              <div *ngIf="gameForm.get('time').errors && gameForm.get('time').touched" class="error-message">
+                *Select Timing
+              </div>
+            </div>
+
+            </div>
+            <div class="col-sm boxes">
+              <p></p>
+                <!-- <input type="file" class="inp-2" (change)="handleInputChange($event)">
+                  <img src="{{imageSrc}}" alt="" class="image-show inp-2" >
+                <button type="submit" class="btn btn-primary btn-lg" (click)="addGame()">Add</button> -->
+                <div class="text-center">
+                  <div class="preview_img">
+                    <div class="main_img">
+                      <picture>
+                        <img src="{{imageSrc}}" id="preview" class="preview" alt="Not Image Selected">
+                      </picture>
+                    </div>
+                    
+                  </div>
+                  <div *ngIf="gameForm.get('gameImage').errors && gameForm.get('gameImage').touched" class="img-err">
+                    *Select Image
+                  </div>
+                    <div class="row btns">
+                      <div class="col">
+
+                        <label class="imgUploadCss" id="imgLabel" for="imgUpload">
+                          <i class="fa-solid fa-cloud-arrow-up pr-5"></i> 
+                          Choose Image
+                        </label>
+                       <input type="file" id="imgUpload" class="imgHidden" (change)="handleInputChange($event)">
+                       <input type="hidden" name="" value="{{imageSrc}}">
+                      </div>
+                      <div class="col">
+                        
+                        <button class="btn1" (click)="deleteimg()">
+                          <p class="paragraph"> delete </p>
+                          <span class="icon-wrapper">
+                            <svg class="icon" width="30px" height="30px" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                              <path d="M6 7V18C6 19.1046 6.89543 20 8 20H16C17.1046 20 18 19.1046 18 18V7M6 7H5M6 7H8M18 7H19M18 7H16M10 11V16M14 11V16M8 7V5C8 3.89543 8.89543 3 10 3H14C15.1046 3 16 3.89543 16 5V7M8 7H16" stroke="#000000" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
+                            </svg>
+                          </span>
+                        </button>
+                      </div>
+                    </div>
+                </div>
+              
+            </div>
+          <!-- </form> -->
+          </div>
+        </div>
+      </mat-card>
+</mat-dialog-content>
+<div mat-dialog-actions align="end" *ngIf="addgame">
+  <button mat-raised-button color="accent" (click)="addGame()">Add Game</button>
+</div>
+
+
+<h2 mat-dialog-title class="header" color="warn" *ngIf="managegame">Update Game Details</h2>
+
+<mat-dialog-content class="mat-typography mt-0" *ngIf="managegame" data-bs-keyboard="false">
+      <mat-card class="card">
+        <div class="container">
+          <div class="row" [formGroup]="gameForm">
+            <!-- <form [formGroup]="gameForm"> -->
+            <div class="col-sm rt-bx boxes">
+              
+              <!-- game name -->
+              <mat-form-field appearance="fill" class="input" color="accent">
+                <mat-label>Game Name</mat-label>
+                <input matInput placeholder="Enter Game Name" formControlName="gameName">
+              </mat-form-field>
+              <div *ngIf="gameForm.get('gameName').errors && gameForm.get('gameName').touched" class="error-message">
+                *Name is required
+              </div>
+            <!-- game details -->
+                <mat-form-field appearance="fill" class="input" color="accent">
+                    <mat-label>Textarea</mat-label>
+                    <textarea matInput class="input" placeholder="Enter Game Name" formControlName="gameDetails"></textarea>
+                  </mat-form-field>
+                  <div *ngIf="gameForm.get('gameDetails').errors && gameForm.get('gameDetails').touched" class="error-message">
+                    *Details is required
+                  </div>
+            <!-- game price -->
+            <div >
+
+              <mat-form-field appearance="fill" style="width: 170px;" color="accent">
+                <mat-label>Game Price</mat-label>
+                <input matInput type="number" placeholder="Game Price" formControlName="gamePrice">
+                <button mat-icon-button matSuffix>
+                  <mat-icon></mat-icon>
+                </button>
+              </mat-form-field>
+              <div *ngIf="gameForm.get('gamePrice').errors && gameForm.get('gamePrice').touched" class="error-message">
+                *Price is required
+              </div>
+
+              <mat-form-field appearance="fill" class="time" style="width: 170px;" color="accent">
+                <mat-label>Available Slots</mat-label>
+                <input matInput type="number" placeholder="Slots" formControlName="slots">
+                <button mat-icon-button matSuffix>
+                  <mat-icon></mat-icon>
+                </button>
+              </mat-form-field>
+              <div *ngIf="gameForm.get('slots').errors && gameForm.get('slots').touched" class="error-message slt">
+                *Slots is required
+              </div>
+              
+              <mat-form-field appearance="fill"  color="accent">
+                <mat-label>Timing</mat-label>
+                <mat-select formControlName="time" [(value)]="selected">
+                  <mat-option value="10 min">10 min</mat-option>
+                  <mat-option value="20 min">20 min</mat-option>
+                  <mat-option value="30 min">30 min</mat-option>
+                </mat-select>
+              </mat-form-field>
+              <div *ngIf="gameForm.get('time').errors && gameForm.get('time').touched" class="error-message">
+                *Select Timing
+              </div>
+            </div>
+
+            </div>
+            <div class="col-sm boxes">
+              <p></p>
+                <!-- <input type="file" class="inp-2" (change)="handleInputChange($event)">
+                  <img src="{{imageSrc}}" alt="" class="image-show inp-2" >
+                <button type="submit" class="btn btn-primary btn-lg" (click)="addGame()">Add</button> -->
+                <div class="text-center">
+                  <div class="preview_img">
+                    <div class="main_img">
+                      <picture>
+                        <img src="{{imageSrc}}" id="preview" class="preview" alt="Not Image Selected">
+                      </picture>
+                    </div>
+                    
+                  </div>
+                  <div *ngIf="gameForm.get('gameImage').errors && gameForm.get('gameImage').touched" class="img-err">
+                    *Select Image
+                  </div>
+                    <div class="row btns">
+                      <div class="col">
+
+                        <label class="imgUploadCss" id="imgLabel" for="imgUpload">
+                          <i class="fa-solid fa-cloud-arrow-up pr-5"></i> 
+                          Choose Image
+                        </label>
+                       <input type="file" id="imgUpload" class="imgHidden" (change)="handleInputChange($event)">
+                       <input type="hidden" name="" value="{{imageSrc}}">
+                      </div>
+                      <div class="col">
+                        
+                        <button class="btn1" (click)="deleteimg()">
+                          <p class="paragraph"> delete </p>
+                          <span class="icon-wrapper">
+                            <svg class="icon" width="30px" height="30px" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                              <path d="M6 7V18C6 19.1046 6.89543 20 8 20H16C17.1046 20 18 19.1046 18 18V7M6 7H5M6 7H8M18 7H19M18 7H16M10 11V16M14 11V16M8 7V5C8 3.89543 8.89543 3 10 3H14C15.1046 3 16 3.89543 16 5V7M8 7H16" stroke="#000000" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
+                            </svg>
+                          </span>
+                        </button>
+                      </div>
+                    </div>
+                </div>
+              
+            </div>
+          <!-- </form> -->
+          </div>
+        </div>
+      </mat-card>
+</mat-dialog-content>
+<div mat-dialog-actions align="end" *ngIf="managegame">
+  <button mat-raised-button color="accent" (click)="onUpdate()">Update Game</button>
+</div>
+
+

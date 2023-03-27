@@ -1,0 +1,90 @@
+nav{
+    height: 100%;
+}
+
+.side-nav-button{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 1.5rem;
+    cursor: pointer;
+}
+
+.side-nav-button:hover{
+    background-color: rgba(255, 255, 255, 0.2);
+    border-radius: 30%;
+}
+
+.dropdown-menu a:hover{
+    background: white;
+    color: black;
+}
+
+.dropdown-menu{
+    background-color: black;
+}
+.dropdown-menu a{
+    border-bottom: 1px solid white;
+    border-top: 1px solid white;
+}
+
+.dropdown-toggle::before { 
+    content: none; 
+    }
+   
+.dropdown-toggle{ 
+     border-radius: 50%;
+}
+       
+
+@media only screen and (max-width: 600px) {
+    .search-bar{
+        display: none;
+    }
+    .navbar{
+        width: 100%;
+    }
+    .profile-logo{
+        position: relative;
+        right: 25px;
+    }
+}
+
+.logo{
+    height: 3.5rem;
+}
+
+.btn-disable{
+    background: transparent;
+    height: 2rem;
+    width: 150px;
+}
+
+.user{
+    border: none;
+    padding: 0.7em 2em;
+    font-size: 18px;
+    font-family: inherit;
+    background-blend-mode: multiply;
+    color: rgb(235, 234, 234);
+    border-radius: 9px;
+    background: linear-gradient(225deg, #181818, #2e2e2e);
+    box-shadow: -5px 5px 10px #191919,
+                5px -5px 10px #292929;
+   }
+   
+   .user:hover {
+    background: #212121;
+    transition: background 1s ease;
+    box-shadow: -5px 5px 10px #191919,
+                5px -5px 10px #292929;
+   }
+   
+   span {
+    opacity: 0.5;
+    transition: opacity 0.2s ease;
+   }
+   
+   .user:hover span {
+    opacity: 0.7;
+   }
